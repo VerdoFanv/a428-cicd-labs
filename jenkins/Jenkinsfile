@@ -1,10 +1,5 @@
 node {
-    agent {
-        docker {
-            image 'node:lts-buster-slim'
-            args '-p 3001:3001'
-        }
-    }
+    docker.image('node:lts-buster-slim').withRun('-p 3001:3001')
     environment {
         CI = 'true'
     }
